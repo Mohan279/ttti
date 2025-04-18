@@ -376,108 +376,135 @@ footer a:hover {
 
 /* Registration Page Styles */
 .register-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('/images/hero/register-hero.jpg');
+    background-image: url('images/hero/register-hero.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 500px;
+    background-repeat: no-repeat;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 60px 0;
+    position: relative;
+}
+
+.register-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.register-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.register-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.register-hero .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .registration-section {
+    padding: 4rem 0;
     background-color: #f8f9fa;
-    padding: 60px 0;
 }
 
 .registration-form {
+    max-width: 800px;
+    margin: 0 auto;
     background: white;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 2rem;
+    border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.registration-form:hover {
-    transform: translateY(-5px);
-}
-
-.registration-form h3 {
-    color: #0d6efd;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.registration-form h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #0d6efd;
-}
-
-.form-label {
-    font-weight: 500;
-    color: #495057;
-}
-
-.form-control, .form-select {
-    border: 1px solid #ced4da;
-    padding: 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-.btn-primary {
-    padding: 12px 30px;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
-}
-
-/* Success Message Styles */
-.success-message {
-    display: none;
-    background: #d4edda;
-    color: #155724;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+.registration-form h2 {
     text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
 }
 
-.success-message i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #28a745;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive Adjustments */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments for registration page */
 @media (max-width: 768px) {
-    .registration-form {
-        padding: 30px 20px;
+    .register-hero h1 {
+        font-size: 2.5rem;
     }
-    
-    .register-hero {
-        padding: 100px 0 40px;
+
+    .register-hero .lead {
+        font-size: 1.2rem;
+    }
+
+    .registration-form {
+        padding: 1.5rem;
     }
 }
 
